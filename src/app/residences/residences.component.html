@@ -20,6 +20,8 @@
           <h5 class="card-title">{{ apartment.description }}</h5>
           <p>Likes: {{ getLikes(apartment) }}</p>
           <button (click)="likeApartment(apartment)" class="btn btn-info">+1 Like</button>
+          <p></p>
+          <button class="btn btn-info" [routerLink]="['/residence',apartment.id]"> show</button>
         </div>
       </div>
     </div>
