@@ -1,0 +1,46 @@
+<p>test works!</p>
+<h1>{{title}}</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="searchPrice">Search by Price:</label>
+            <input type="number" class="form-control" id="searchPrice" [(ngModel)]="searchPrice"
+                (ngModelChange)="filterProducts()">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Filtered Products:</h3>
+        <ul>
+            <li *ngFor="let product of filteredProducts">
+                {{ product.title }} (Price: {{ product.price }})
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let product of listProduct">
+        <div class="card" *ngIf="isProductMatch(product)">
+            <div class="card-body">
+                <h5 class="card-title">Product Details</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: {{product.id}}</li>
+                    <li class="list-group-item">Title: {{product.title}}</li>
+                    <li class="list-group-item">Price: {{product.price}}</li>
+                    <li class="list-group-item">Like: {{product.like}}</li>
+                    <li class="list-group-item">Quantity: {{product.quantity}}</li>
+                </ul>
+                <button class="btn btn-primary" (click)="addLike(product)">Like</button>
+                <p></p>
+                <button class="btn btn-primary" (click)="buyProduct(product)"
+                    [disabled]="product.quantity === 0">Buy</button>
+                <p></p>
+                <button class="btn btn-info" [routerLink]="['/product',product.id]"> show</button>
+            </div>
+        </div>
+    </div>
+</div>
