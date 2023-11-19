@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
+import { DetailsApartementComponent } from './details-apartement/details-apartement.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { DetailsProductComponent } from './details-product/details-product.compo
     HomeComponent,
     NotFoundComponent,
     DetailsProductComponent,
+    DetailsApartementComponent,
 
 
   ],
