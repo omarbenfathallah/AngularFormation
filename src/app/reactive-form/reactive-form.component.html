@@ -1,0 +1,39 @@
+<html>
+
+<body>
+
+
+    <div style="    width: 1000px;
+                margin-left: 265px;
+            margin-top: 50px;">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <label for="fname">Fisrt Name</label>
+            <!-- [formControl]="name" -->
+            <input type="text" id="fname" name="firstname" formControlName="firstname" placeholder="Your name..">
+            <div class="alert alert-danger" *ngIf=""></div>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" formControlName="lastname" placeholder="Your last name..">
+            <div class="alert alert-danger"></div>
+
+
+        </form>
+        <h3> adress</h3>
+        <div formGroupName="adress"></div>
+        <input type="text" formControlName="street" placeholder="street">
+        <br>
+        <label> vcity</label>
+        <input type="text" formControlName="city" placeholder="city">
+    </div>
+    <br>
+    <button type="submit" value="submit" class="btn btn-info" [disabled]="registerForm.invalid"> Submit</button>
+</body>
+
+</html>
+
+
+<!-- <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select> -->
