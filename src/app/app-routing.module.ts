@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { DetailsApartementComponent } from './details-apartement/details-apartement.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'apartement/:id', component: DetailsApartementComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  { path: 'form', component: ReactiveFormComponent },
+  { path: '**', component: NotFoundComponent }
 
 ]
 

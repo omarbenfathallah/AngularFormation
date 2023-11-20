@@ -15,7 +15,7 @@ export class ReactiveFormComponent {
   ngOnInit(): void {
     this.registerForm = new FormGroup(
       {
-        firstname: new FormControl('', Validators.required),
+        firstname: new FormControl('', [Validators.required, Validators.minLength(3)]),
         lastname: new FormControl('', Validators.required),
         address: new FormGroup({
           street: new FormControl('', Validators.required),
