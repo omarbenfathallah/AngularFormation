@@ -1,46 +1,33 @@
-<html>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>FirstName</label>
+    <input class="form-control" type="text" formControlName="firstname" placeholder="firstName">
+    <br>
 
-<body>
+    <div *ngIf="registerForm.controls['firstname'].errors
+    && registerForm.controls['firstname'].touched">
+        <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('required')">
+            the firstName is a required field
+        </div>
 
+        <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('minlength')">
+            the firstName minLength is 3
+        </div>
+    </div>
 
-    <div style="    width: 1000px;
-                margin-left: 265px;
-            margin-top: 50px;">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <label>Fisrt Name</label>
-            <input type="text" name="firstname" formControlName="firstname" placeholder="Your name..">
-            <br>
+    <label>LastName</label>
+    <input class="form-control" type="text" formControlName="lastname" placeholder="lastname">
 
-            <div *ngIf="registerForm.controls['firstname'].errors && registerForm.controls['lastname'].errors"></div>
-
-            <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('required')"> first name
-                is required</div>
-            <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('minlength')"> first name
-                is min 3 caracter</div>
-
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" formControlName="lastname" placeholder="Your last name..">
-            <div class="alert alert-danger" *ngIf="registerForm.get('lastname')?.errors"></div>
-
-
-        </form>
-        <h3> adress</h3>
-        <div formGroupName="adress"></div>
+    <div class="alert alert-danger" *ngIf="registerForm.get('lastname')?.errors">
+        the LastName is a required field
+    </div>
+    <h3>Adress</h3>
+    <div formGroupName="adress">
+        <label>Stret</label>
         <input type="text" formControlName="street" placeholder="street">
         <br>
-        <label> vcity</label>
+        <label>city</label>
         <input type="text" formControlName="city" placeholder="city">
     </div>
     <br>
-    <button type="submit" value="submit" class="btn btn-info" [disabled]="registerForm.invalid"> Submit</button>
-</body>
-
-</html>
-
-
-<!-- <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select> -->
+    <button class="btn btn-info" type="submit" [disabled]="registerForm.invalid">submit</button>
+</form>

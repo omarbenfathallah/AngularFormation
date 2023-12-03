@@ -1,7 +1,7 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from './test/test.component';
+import { TestComponent } from './products/test.component';
 import { ResidencesComponent } from './residences/residences.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
