@@ -1,0 +1,57 @@
+<h1>reactive-form</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" formControlName="id" class="form-control" placeholder="id">
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" formControlName="title" class="form-control" placeholder="title">
+    </div>
+
+    <div *ngIf="registerForm.controls['title'].errors &&
+    registerForm.get('title')?.touched">
+        <div *ngIf="registerForm.controls['title'].hasError('required')">
+            required
+        </div>
+        <div *ngIf="registerForm.controls['title'].hasError('minlength')">
+            Message minLength
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>price</label>
+        <input type="number" formControlName="price" class="form-control" placeholder="price">
+    </div>
+
+    <div *ngIf="registerForm.controls['price'].errors &&
+    registerForm.get('price')?.touched">
+        <div *ngIf="registerForm.controls['price'].hasError('required')">
+            required
+        </div>
+        <div *ngIf="registerForm.controls['price'].hasError('pattern')">
+            Message pattern
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label>like</label>
+        <input type="number" formControlName="like" class="form-control" placeholder="like">
+    </div>
+    <div class="alert alert-danger" *ngIf="registerForm.get('like')?.errors &&
+        registerForm.get('like')?.touched">
+        like message erreur
+    </div>
+
+    <div class="form-group">
+        <label>quantity:</label>
+        <input type="number" formControlName="quantity" class="form-control" placeholder="quantity">
+    </div>
+
+
+
+    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-success">submit</button>
+    <button type="submit" (click)="reset()" class="btn btn-warning">Cancel</button>
+</form>

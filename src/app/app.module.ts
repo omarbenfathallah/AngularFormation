@@ -16,12 +16,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorsComponentComponent } from './shared/errors-component/errors-component.component';
 import { ListApartmentComponentComponent } from './ListApartmentComponent/ListApartmentComponent.component';
 import { UpdateApartmentComponent } from './update-apartment/update-apartment.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     ResidencesComponent,
     TestComponent,
@@ -33,7 +34,8 @@ import { UpdateApartmentComponent } from './update-apartment/update-apartment.co
     NavbarComponent,
     ErrorsComponentComponent,
       ListApartmentComponentComponent,
-      UpdateApartmentComponent
+      UpdateApartmentComponent,
+      AddProductComponent
    ],
   imports: [
     BrowserModule,
