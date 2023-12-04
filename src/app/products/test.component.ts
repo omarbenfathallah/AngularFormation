@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/product';
+import { ProductService } from '../services/product.service';
 
 
 @Component({
@@ -10,13 +11,15 @@ import { Product } from '../models/product';
 export class TestComponent {
   title: string = "E-Commerce";
     price!:number;
-  listProduct: Product[] = [{ id: 1, title: "prince", price: 20, quantity: 45, like: 45 },
-  { id: 2, title: "king", price: 30, quantity: 0, like: 0 },
-  { id: 3, title: "queen", price: 40, quantity: 34, like: 78 }
-  ];
+    listProduct!:Product[];
 
   searchPrice: number = 120;
   filteredProducts: Product[] = [];
+  
+  constructor(private sP:ProductService){}
+  ngOnInit(){
+    this.listProduct=this.sP.listProduct;
+  }
 
   buyProduct(product: Product): void {
     if (product.quantity > 0) {
