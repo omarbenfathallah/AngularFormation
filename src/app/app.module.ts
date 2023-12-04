@@ -14,12 +14,14 @@ import { DetailsApartementComponent } from './details-apartement/details-apartem
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorsComponentComponent } from './shared/errors-component/errors-component.component';
+import { ListApartmentComponentComponent } from './ListApartmentComponent/ListApartmentComponent.component';
+import { UpdateApartmentComponent } from './update-apartment/update-apartment.component';
 
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     ResidencesComponent,
     TestComponent,
@@ -30,9 +32,9 @@ import { ErrorsComponentComponent } from './shared/errors-component/errors-compo
     ReactiveFormComponent,
     NavbarComponent,
     ErrorsComponentComponent,
-
-
-  ],
+      ListApartmentComponentComponent,
+      UpdateApartmentComponent
+   ],
   imports: [
     BrowserModule,
     FormsModule,

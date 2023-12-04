@@ -1,1 +1,7 @@
-<p>errors-component works!</p>
+<!-- errors.component.html -->
+
+<div *ngIf="errorMsgString">{{ errorMsgString }}</div>
+<div *ngIf="errorMsgNumber">{{ errorMsgNumber }}</div>
+<div *ngIf="errorMsgNull">{{ errorMsgNull }}</div>
+<!-- Utiliser une seule propriété d'entrée -->
+<!-- <div *ngIf="errorMsg">{{ errorMsg }}</div> -->

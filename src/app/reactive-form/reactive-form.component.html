@@ -1,31 +1,30 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <label>FirstName</label>
     <input class="form-control" type="text" formControlName="firstname" placeholder="firstName">
-    <br>
-
-    <div *ngIf="registerForm.controls['firstname'].errors
-    && registerForm.controls['firstname'].touched">
-        <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('required')">
-            the firstName is a required field
+    <div *ngIf="registerForm.get('firstname')?.errors && registerForm.get('firstname')?.touched"
+         class="alert alert-danger">
+        <div *ngIf="registerForm.get('firstname')?.hasError('required')">
+            The firstName is a required field
         </div>
-
-        <div class="alert alert-danger" *ngIf="registerForm.controls['firstname'].hasError('minlength')">
-            the firstName minLength is 3
+        <div *ngIf="registerForm.get('firstname')?.hasError('minlength')">
+            The firstName minLength is 3
         </div>
     </div>
 
     <label>LastName</label>
-    <input class="form-control" type="text" formControlName="lastname" placeholder="lastname">
-
-    <div class="alert alert-danger" *ngIf="registerForm.get('lastname')?.errors">
-        the LastName is a required field
+<input class="form-control" type="text" formControlName="lastname" placeholder="lastname">
+<div *ngIf="registerForm.get('lastname')?.errors && registerForm.get('lastname')?.touched"
+     class="alert alert-danger">
+    <div *ngIf="registerForm.get('lastname')?.hasError('required')">
+        The lastName is a required field
     </div>
+</div>
     <h3>Adress</h3>
-    <div formGroupName="adress">
-        <label>Stret</label>
+    <div formGroupName="address">
+        <label>Street</label>
         <input type="text" formControlName="street" placeholder="street">
         <br>
-        <label>city</label>
+        <label>City</label>
         <input type="text" formControlName="city" placeholder="city">
     </div>
     <br>
