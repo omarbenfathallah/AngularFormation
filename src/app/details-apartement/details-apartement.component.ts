@@ -16,6 +16,7 @@ export class DetailsApartementComponent {
     this.appartNum= this.route.snapshot.params['appNum'];
     this.floorNum = this.route.snapshot.params['floorNum'];
     this.surface = this.route.snapshot.params['surface'];
+    
 
 
   }

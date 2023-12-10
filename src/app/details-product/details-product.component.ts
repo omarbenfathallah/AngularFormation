@@ -10,7 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class DetailsProductComponent {
   id!: number;
-  product!:Product
+  product!:Product[]
   constructor(private route: ActivatedRoute , private sP:ProductService) {
     this.id = this.route.snapshot.params['id'];
   }

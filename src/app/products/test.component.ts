@@ -29,7 +29,7 @@ export class TestComponent {
 
 
   // Function to add a like to a product
-  addLike(p: Product): void {
+  addLike(p: Product): void {  
     p.like++;
   }
 
